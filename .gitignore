@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# Claude Code
+.claude/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment
+.env
+.env.*
