@@ -4,7 +4,7 @@ Three splits, three projects, three identical-looking terminals. You keep checki
 
 Just color them.
 
-![tint](tint-screenshot.png)
+![tint](tint-in-action.gif)
 
 `tint` applies project-themed color palettes to individual Ghostty surfaces using escape sequences. Colors are derived from the project's own brand and design system. Close the tab, they're gone. Your Ghostty config stays untouched.
 
