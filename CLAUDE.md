@@ -14,7 +14,7 @@ Two paths for theme creation:
 
 - `tint.sh` — shell function sourced by .zshrc. Handles `tint <name>`, `tint reset`, `tint ls`.
 - `~/.terminal-themes/*.sh` — where generated themes live at runtime. Each file is just printf commands with OSC escape sequences.
-- `.claude/commands/tint-create.md` — the Claude Code slash command. Install copies this to `~/.claude/commands/` for global availability.
+- `commands/tint-create.md` — the Claude Code slash command. Install copies this to `~/.claude/commands/` for global availability.
 - `spec.md` — the codified rules for translating brand colors into terminal palettes. This is the source of truth for generation logic.
 - `tint-create.sh` — standalone bash fallback.
 - `themes/` — bundled example themes, copied to `~/.terminal-themes/` on install.

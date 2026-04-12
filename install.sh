@@ -37,8 +37,8 @@ fi
 
 # Install Claude Code command (global, available in all sessions)
 mkdir -p "$CLAUDE_CMD_DIR"
-if [[ -f "$TINT_DIR/.claude/commands/tint-create.md" ]]; then
-  cp "$TINT_DIR/.claude/commands/tint-create.md" "$CLAUDE_CMD_DIR/tint-create.md"
+if [[ -f "$TINT_DIR/commands/tint-create.md" ]]; then
+  cp "$TINT_DIR/commands/tint-create.md" "$CLAUDE_CMD_DIR/tint-create.md"
   echo "  installed /tint-create command for Claude Code"
 fi
 
