@@ -6,10 +6,11 @@ The goal is not to replicate the project's UI in a terminal. It's to answer: **"
 
 ## Background
 
+- **Default to dark backgrounds, even for light-dominant brands.** Terminal apps (Claude Code, less, syntax highlighters, `ls --color`) emit muted text and dim accents via ANSI slots 7/8 and via true-color RGB hex codes tuned for dark backgrounds. A light-bg theme will have readability casualties no palette can fix. For high-key brands (bright pastels, neon, white-dominant), express the brand through the foreground tint, the cursor, and brand-quoted ANSI slots — not by inverting terminal polarity. Only ship a light theme when the user explicitly asks AND accepts the tradeoff.
 - **Hue**: from the brand's dominant/signature color.
 - **Saturation**: 60-100%. Preserve the brand's intensity. This is the primary visual differentiator between themes — don't wash it out.
 - **Lightness**: 18-32%. Dark enough for light text, saturated enough to be instantly recognizable. Reference: Borland blue is `hsl(240, 100%, 32%)`.
-- **Hue-specific adjustment**: greens and blues can tolerate higher lightness (~28-32%). Purples and reds feel heavier — keep them at 18-24%.
+- **Perceived brightness ≠ HSL lightness.** Hues that read as naturally luminous (yellows, limes, oranges, warm cyans) need the upper end of the range — pushed lower they desaturate into mud/brown and read as a *different color name* than the brand. Hues that read as naturally heavy (purples, deep blues, magentas, deep reds) need the lower end — pushed higher they feel oppressive. The test: if the dark background reads as a different color than the brand at a glance ("that's brown, not yellow"), push lightness up regardless of where the math lands. Greens and blues sit comfortably in the middle.
 - **If the brand is monochrome/black**: pick the most "structural" brand color (e.g., the one used in the logo or primary actions) and use that hue instead.
 
 ## Foreground
@@ -17,11 +18,12 @@ The goal is not to replicate the project's UI in a terminal. It's to answer: **"
 - **Can carry brand character.** It doesn't have to be neutral gray. If the brand has a natural light color (cream, gold, lavender), adapt it for the foreground.
 - **Minimum ~7:1 contrast ratio** against background.
 - **Lightness**: 75-95%. Warm/cool temperature should match the brand.
+- **When the background sits high in its lightness band** (luminous-hue bgs near 28-32%), push the foreground to the top of the range (~92-95%). The 7:1 ratio gets tight at the bright end; foregrounds need to reach near-white to hold contrast.
 - **Complementary pairings work well**: green bg + cream fg, blue bg + yellow fg, purple bg + lavender fg.
 
 ## Cursor
 
-- The brand's **most vivid/identifiable color** that isn't the background hue.
+- The brand's **most iconic single-color moment** — where the recognizable brand hue lives at full intensity. If the background already carries the iconic hue (at lower lightness), the cursor uses the next most prominent brand color. If the background CAN'T carry the iconic hue (because it's too luminous to work as a bg), the cursor MUST — this is the brand's signature in the theme.
 - Must contrast strongly against background.
 - Avoid same-hue-family as background (no green cursor on green bg). Pick the next most prominent brand color instead.
 
