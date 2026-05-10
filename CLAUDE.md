@@ -23,9 +23,9 @@ Two paths for theme creation:
 
 The spec (`spec.md`) captures this fully, but the key ideas:
 
-- **Backgrounds are bold and saturated** (60-100% saturation, 18-32% lightness). Not "dark with a hint of color" — the background IS the brand differentiator. Reference point: Borland blue `#0000a4` = `hsl(240, 100%, 32%)`.
-- **Foregrounds carry brand character** too — cream, yellow, lavender, not just neutral gray.
-- **Cursor avoids the background hue** and uses the brand's most vivid alternate color.
+- **Two routes for the bg, chosen by survival test.** Most brands take the **brand-bg** route: signature hue at 60-100% saturation and 18-32% lightness — the bg IS the brand. Reference: Borland blue `#0000a4` = `hsl(240, 100%, 32%)`. Brands whose dominant hue is naturally luminous (yellow, amber, orange, hot pink, neon) — or that use their brand color as a sparing accent against a black surface — take the **tinted-canvas** route instead: near-black bg with a faint brand-temperature breath, brand identity carried by fg/cursor/bright ANSI slots. Picking the wrong route is how you get rust from amber and maroon from hot pink.
+- **Foregrounds carry brand character** too — cream, yellow, lavender, not just neutral gray. In tinted-canvas mode the fg is a primary brand vehicle, not a contrast partner.
+- **Cursor** avoids the bg hue in brand-bg mode (use the next brand color); in tinted-canvas mode the cursor MUST carry the brand's signature color at full intensity — it's the brand's anchor moment when the bg recedes.
 - **"What would this brand look like as a CLI product?"** — not a literal copy of website colors, but an extrapolation that's a functional terminal theme first, brand-flavored second.
 
 ## Technical details
