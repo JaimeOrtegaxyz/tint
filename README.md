@@ -14,6 +14,7 @@ tint apple       # another one
 tint blueberry   # one more
 tint reset       # back to your default
 tint ls          # list available themes
+tint rename a b  # rename a saved theme
 ```
 
 ## Creating themes
